@@ -1,0 +1,281 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrictionFlow - Mastery through Friction</title>
+    <!-- Using Tailwind via CDN for the landing page styling to match code.html exactly -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              h1: ["Space Grotesk", "sans-serif"],
+              body: ["Space Grotesk", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              background: "#0d0d0f",
+              surface: "#1a1a1d",
+              primary: "#FF6B4A",
+              "primary-gradient": "#FFB84A",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .particle-bg {
+        background-image:
+          radial-gradient(
+            circle at 70% 60%,
+            rgba(255, 107, 74, 0.08) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 30% 80%,
+            rgba(255, 184, 74, 0.05) 0%,
+            transparent 30%
+          );
+      }
+
+      .glow-box {
+        box-shadow:
+          0 0 30px rgba(255, 107, 74, 0.2),
+          inset 0 0 10px rgba(255, 107, 74, 0.1);
+        border: 1px solid rgba(255, 107, 74, 0.5);
+      }
+
+      .vertical-text {
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-background text-white font-body antialiased min-h-screen relative"
+  >
+    <!-- LANDING PAGE CONTAINER -->
+    <div
+      id="landing-page"
+      class="fixed inset-0 z-100 flex w-full bg-background particle-bg overflow-y-auto"
+    >
+      <!-- Left Vertical Branding Nav -->
+      <aside
+        class="hidden lg:flex w-32 border-r border-white/5 flex-col items-center justify-center shrink-0 bg-background/50 backdrop-blur-md z-20 sticky top-0 h-screen self-start"
+      >
+        <h1
+          class="vertical-text text-8xl font-black text-primary tracking-widest opacity-90 pb-8 font-h1"
+        >
+          FRICTION
+        </h1>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="grow flex flex-col relative w-full min-h-screen lg:min-h-0">
+        <!-- Top Nav -->
+        <header
+          class="w-full p-4 md:p-8 flex justify-between lg:justify-end items-center z-20"
+        >
+          <!-- Mobile/Tablet FRICTION branding -->
+          <span
+            class="lg:hidden text-2xl font-black text-primary tracking-widest font-h1"
+            >FRICTION</span
+          >
+          <div class="flex items-center gap-2 group cursor-pointer">
+            <span
+              class="material-symbols-outlined text-primary group-hover:animate-pulse"
+              >hexagon</span
+            >
+            <span class="font-bold text-lg tracking-wide text-white/90"
+              >FrictionFlow</span
+            >
+          </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div
+          class="grow flex flex-col lg:flex-row items-center justify-center lg:justify-between px-4 md:px-16 lg:px-24 pb-8 z-10 relative"
+        >
+          <!-- Left Text Content -->
+          <div
+            class="max-w-2xl lg:mt-0 mt-4 md:mt-12 flex flex-col items-center lg:items-start text-center lg:text-left gap-4 md:gap-8"
+          >
+            <h2
+              class="text-3xl sm:text-5xl md:text-7xl font-h1 font-bold leading-[1.05] tracking-tight"
+            >
+              <span class="text-primary">Understand </span>the<br />
+              code. Stop the<br />
+              copy-paste.
+            </h2>
+
+            <p class="text-lg text-white/60 max-w-md">
+              Stop removing friction. Start weaponizing it. We force cognitive
+              engagement before revealing the AI's solution.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mt-2"
+            >
+              <button
+                id="enter-app-btn"
+                onclick="document.getElementById('landing-page').remove()"
+                class="bg-linear-to-r from-primary to-orange-500 hover:opacity-90 text-white font-semibold px-8 py-3.5 rounded-md transition-all active:scale-95 shadow-[0_0_15px_rgba(255,107,74,0.3)]"
+              >
+                Get FrictionFlow
+              </button>
+              <button
+                class="text-white/80 hover:text-white font-medium border-b border-white/30 hover:border-white transition-colors pb-1 flex items-center gap-2"
+              >
+                Watch Demo
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Code Mockup (The Friction Gate) -->
+          <div
+            class="mt-8 lg:mt-0 w-full max-w-[500px] perspective-1000 relative mx-auto lg:mx-0"
+          >
+            <div
+              class="absolute inset-0 bg-primary/20 blur-[80px] -z-10 rounded-full"
+            ></div>
+
+            <div
+              class="bg-[#131315] glow-box rounded-xl overflow-hidden backdrop-blur-xl"
+            >
+              <!-- Mac OS style header -->
+              <div
+                class="flex items-center px-4 py-3 border-b border-white/5 bg-white/5"
+              >
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="mx-auto text-xs font-mono text-white/40">
+                  FrictionGate.ts
+                </div>
+              </div>
+
+              <!-- Code Snippet -->
+              <div
+                class="p-6 font-mono text-[13px] md:text-sm leading-relaxed text-white/70 overflow-x-auto"
+              >
+                <span class="text-white/40">// Friction Gate Logic</span><br />
+                <span class="text-purple-400">function</span>
+                <span class="text-blue-400">frictionGate</span>(code) {<br />
+                &nbsp;&nbsp;<span class="text-purple-400">const</span>
+                understanding = theme.<span class="text-yellow-200"
+                  >interpret</span
+                >(code);<br />
+                <br />
+                &nbsp;&nbsp;<span class="text-purple-400">if</span>
+                (understanding &lt; THRESHOLD) {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400"
+                  >return</span
+                >
+                <span class="text-yellow-200">takeAStance</span>(<span
+                  class="text-green-300"
+                  >'Learn more.'</span
+                >);<br />
+                &nbsp;&nbsp;} <span class="text-purple-400">else</span> {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400"
+                  >return</span
+                >
+                <span class="text-yellow-200">ship</span>(code);
+                <span class="text-white/40">// Just build it</span><br />
+                &nbsp;&nbsp;}<br />
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Stats Bar -->
+        <div
+          class="w-full px-4 md:px-16 py-4 md:py-8 z-10 flex justify-end shrink-0"
+        >
+          <div
+            class="grow w-full max-w-5xl mx-auto border border-white/10 rounded-xl bg-white/5 backdrop-blur-md flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10"
+          >
+            <div
+              class="flex-1 px-4 md:px-8 py-4 md:py-6 flex flex-col justify-center"
+            >
+              <div class="flex items-baseline gap-3 mb-1">
+                <span class="text-2xl md:text-4xl font-bold text-primary"
+                  >99.9%</span
+                >
+                <span class="text-sm font-semibold text-white/90">Uptime</span>
+              </div>
+              <span class="text-xs text-white/50 uppercase tracking-widest"
+                >Enterprise Grade</span
+              >
+            </div>
+
+            <div
+              class="flex-1 px-4 md:px-8 py-4 md:py-6 flex flex-col justify-center"
+            >
+              <div class="flex items-baseline gap-3 mb-1">
+                <span class="text-2xl md:text-4xl font-bold text-primary"
+                  >+45%</span
+                >
+                <span class="text-sm font-semibold text-white/90"
+                  >Efficiency</span
+                >
+              </div>
+              <span class="text-xs text-white/50 uppercase tracking-widest"
+                >Optimized Performance</span
+              >
+            </div>
+
+            <div
+              class="flex-1 px-4 md:px-8 py-4 md:py-6 flex flex-col justify-center"
+            >
+              <div class="flex items-baseline gap-3 mb-1">
+                <span class="text-2xl md:text-4xl font-bold text-primary"
+                  >1M+</span
+                >
+                <span class="text-sm font-semibold text-white/90"
+                  >Active Users</span
+                >
+              </div>
+              <span class="text-xs text-white/50 uppercase tracking-widest"
+                >Global Reach</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Random glowing dust points for background depth -->
+        <div
+          class="absolute top-1/4 left-1/3 w-1 h-1 bg-primary rounded-full shadow-[0_0_10px_rgba(255,107,74,1)] opacity-50 z-0"
+        ></div>
+        <div
+          class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-yellow-500 rounded-full shadow-[0_0_12px_rgba(234,179,8,1)] opacity-30 z-0"
+        ></div>
+      </main>
+    </div>
+
+    <!-- REACT ROOT -->
+    <div id="root" class="relative z-50"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

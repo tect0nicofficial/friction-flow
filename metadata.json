@@ -1,0 +1,6 @@
+{
+  "name": "FrictionFlow - Cognitive Developer Assistant",
+  "description": "A VS Code thinking assistant that encourages deep debugging through controlled friction rather than direct answers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
